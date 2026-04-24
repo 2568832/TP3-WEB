@@ -1,0 +1,72 @@
+﻿@using TP2.Models
+@model Carte_Graphique
+
+<div class="container py-5 text-black">
+    <h2>Détail Cartes graphique</h2>
+
+    <div class="row">
+        <img class="col-md-6 px-3" src="@Model.imgURL" alt="@Model.Model">
+
+        <ul class="col-md-4 m-2 text-start">
+
+            <p> Stats :</p>
+            <li><strong>Nom :</strong> @(Model.Nom) </li>
+
+            <li>
+                <strong>Model :</strong>
+
+                @(Model.Model)
+            </li>
+
+            <li><strong>Prix :</strong> @(Model.Prix) $ </li>
+
+            <li><strong>performance AI:</strong> @(Model.PerformanceAI)</li>
+
+            <li><strong>Consomation MAX(W) :</strong> @(Model.ConsomationMaxEn_Watt) </li>
+
+            <li>
+                <strong>
+                    Mémoire vidéo
+                </strong> @(Model.Mémoire_vidéo)
+            </li>
+
+            <li><strong>Résolution priorisé :</strong> @(Model.ResolutionPriorise)  </li>
+
+            <li>
+                <strong>Info IA :</strong> @(Model.InfoIA)
+            </li>
+
+
+        </ul>
+    </div>
+    @if (Model.Vedette == true )
+    {
+        <p class=" PVedette show"> PERSONNAGE VEDETTE </p>
+    }
+    else
+    {
+        <p class=" hide">  </p>
+
+    }
+
+     <!--                  Je doit ajouté une condition-->
+
+    <form action="~/Enfant/favoris" method="POST" class="mt-4">
+        <input type="hidden" name="name" value="@(Model.Nom)">
+
+        <button type="submit" class="btn btn-success btn-lg">
+            <i class="fa-solid fa-star"></i> Ajouter aux favoris
+        </button>
+    </form>
+
+    <details>
+        <!-- Permet d'afficher un texte déroulant -->
+        <summary class=" pt-5">
+            Description
+        </summary>
+        <p>
+            @(Model.Description)
+        </p>
+    </details>
+
+</div>

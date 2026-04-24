@@ -1,0 +1,164 @@
+body {
+    background-image: linear-gradient(#7f807e, #ffffff, #9b9c99);
+    
+}
+
+.Nvidia {
+  background-image: linear-gradient(#557c06, #80BC04, #b4e94b);
+  padding: 0% 5% 20% 5%;
+
+
+  transition: 1s;
+}
+
+.Nvidia:hover {
+  padding: 0% 5% 20% 5%;
+  transform: scaleX(1.5);
+  transition: 1s;
+  top: 100px;
+  z-index: 200;
+  transform-origin: top left
+}
+
+.Nvidia:hover p {
+
+  font-size: 100%;
+  display: auto;
+
+
+}
+
+
+.Nvidia:hover img {
+  transform: scaleY(2.0);
+  transform: scaleX(0.75);
+
+  transition: 1s;
+
+}
+
+
+
+.AMD {
+
+  background-image: linear-gradient(rgb(160, 5, 5), #E71C22, rgba(255, 0, 0));
+  padding: 0% 5% 20% 5%;
+  transition: 1s;
+
+
+}
+
+.AMD:hover {
+  padding: 5% 5% 20% 5%;
+  transform: scaleX(1.5);
+  transition: 1s;
+  top: 100px;
+  z-index: 200;
+  transform-origin: TOP center
+}
+
+.Box p {
+  filter: opacity(0%);
+  transition: filter 1s;
+}
+
+.Box:hover p {
+  filter: opacity(100%);
+
+  display: inline;
+
+}
+
+.AMD:hover img {
+  transform: scaleY(2.0);
+  transform: scaleX(0.75);
+
+  transition: 1s;
+
+}
+
+.INTEL {
+
+  background-image: linear-gradient(#0d4f81, #016EC3, #349ff0);
+  padding: 0% 5% 20% 5%;
+  transition: 1s;
+
+}
+
+.INTEL:hover {
+  padding: 5% 5% 20% 5%;
+  transform: scaleX(1.5);
+  transition: 1s;
+  top: 100px;
+  z-index: 200;
+  transform-origin: TOP right
+}
+
+.INTEL:hover p {
+  font-size: 100%;
+  display: auto;
+
+
+}
+
+.INTEL:hover img {
+  transform: scaleY(2.0);
+  transform: scaleX(0.75);
+  transition: 1s;
+
+}
+
+@media (min-width: 0px) and (max-width: 425px) {
+  .Nvidia:hover {
+    padding: 0% 5% 20% 5%;
+    transform: scaleX(1);
+    transition: 1s;
+    top: 100px;
+    z-index: 200;
+    transform-origin: top left
+  }
+
+  .Nvidia:hover img {
+    transform: scaleY(1);
+    transform: scaleX(1);
+
+    transition: 1s;
+
+  }
+
+  .AMD:hover {
+    padding: 0% 5% 20% 5%;
+    transform: scaleX(1);
+    transition: 1s;
+    top: 100px;
+    z-index: 200;
+    transform-origin: top left
+  }
+
+  .AMD:hover img {
+    transform: scaleY(1);
+    transform: scaleX(1);
+
+    transition: 1s;
+
+  }
+
+  .INTEL:hover {
+    padding: 0% 5% 20% 5%;
+    transform: scaleX(1);
+    transition: 1s;
+    top: 100px;
+    z-index: 200;
+    transform-origin: top left
+  }
+
+  .INTEL:hover img {
+    transform: scaleY(1);
+    transform: scaleX(1);
+
+    transition: 1s;
+
+  }
+
+
+}

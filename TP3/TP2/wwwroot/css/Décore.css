@@ -1,0 +1,183 @@
+header {
+    box-sizing: content-box;
+    background-color: #d8d7d7;
+    opacity: 70%;
+    padding-bottom: 1%;
+    border-radius: 0% 0% 5% 5%;
+}
+
+
+#NomSite {
+    font-size: 300%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-style: italic;
+    color: #201f1f;
+    text-shadow: 0rem 0rem #b9b7b7;
+    transition: 0.3s;
+    position: relative;
+}
+
+#NomSite:hover {
+
+    text-shadow: 0rem 0.5rem #b9b7b7;
+
+}
+
+#Home {
+    transform: scale(1.5);
+    top: 2%;
+    right: 7.5%;
+    position: fixed;
+
+}
+
+#SelectFavorie {
+    transform: scale(1.5);
+    top: 2%;
+    right: 5%;
+    position: fixed;
+
+
+}
+
+#Selection_Recherche {
+    transform: scale(1.5);
+    top: 2%;
+    right: 2.5%;
+    position: fixed;
+
+}
+
+i {
+    
+    color: #141414;
+}
+
+i:hover {
+    border: 10% solid;
+    border-radius: 70%;
+    background-color: #cfdee5;
+    opacity: 70%;
+}
+
+i:active {
+    color: aqua;
+}
+
+.Texte_Blanc {
+    transition: 1s;
+    color: #e2e4df;
+
+
+}
+
+#Text_noir
+{
+    color: black;
+}
+
+.PVedette {
+    background-color: #969393;
+    border: #b9b7b7;
+    border-radius: 10%;
+    padding: 1rem 1.5rem;
+    color: white;
+    display: inline;
+    .Text_noir {
+    color: black;
+}
+
+footer {
+    position: fixed;
+    bottom: 0%;
+    left: 0rem;
+    background-color: #e2e4df;
+    z-index: 300;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+@media (min-width: 426px) and (max-width: 1024px) {
+    #NomSite:hover {
+
+        text-shadow: 0rem 0.5rem #b9b7b7;
+
+    }
+
+    #NomSite:hover {
+
+        text-shadow: 0rem 0.5rem #b9b7b7;
+
+    }
+
+    #Home {
+        transform: scale(1);
+        top: 2%;
+        right: 10%;
+        position: fixed;
+
+    }
+
+    #SelectFavorie {
+        transform: scale(1);
+        top: 2%;
+        right: 6%;
+        position: fixed;
+
+
+    }
+
+    #Selection_Recherche {
+        transform: scale(1);
+        top: 2%;
+        right: 2%;
+        position: fixed;
+
+    }
+
+}
+
+
+
+@media (min-width: 318px) and (max-width: 426px) {
+    #NomSite {
+        font-size: 150%;
+        padding-bottom: 10%;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        color: #141414;
+        text-shadow: 0rem 0rem #b9b7b7;
+        transition: 0.3s;
+    }
+
+    #NomSite:hover {
+
+        text-shadow: 0rem 0.5rem #b9b7b7;
+
+    }
+
+    #Home {
+        transform: scale(0.7);
+        top: 3%;
+        right: 70%;
+        position: fixed;
+    }
+
+    #SelectFavorie {
+        transform: scale(0.7);
+        top: 3%;
+        right: 50%;
+        position: fixed;
+    }
+
+    #Selection_Recherche {
+        transform: scale(0.7);
+        top: 3%;
+        right: 30%;
+        position: fixed;
+    }
+}

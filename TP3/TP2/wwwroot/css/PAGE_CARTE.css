@@ -1,0 +1,59 @@
+/*body {
+    background-attachment: fixed;
+    background-image: url('/Images/BackGround/luxury-plain-green-gradient-abstract-studio-background-empty-room-with-space-your-text-picture.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}*/
+* p {
+    text-align: center;
+}
+.text-danger {
+
+    filter: brightness(2) saturate(2);
+
+}
+
+main>div {
+    height: 200%;
+    color: aliceblue;
+    
+}
+
+.border {
+    transition: 2s;
+    border-radius: 10px;
+    
+    
+    
+}
+
+.border-hover-red:hover {
+    border-color: rgb(247, 72, 72) !important;
+    transition: border-color 0.1s ease-in-out;
+    border-radius: 6%;
+    
+}
+
+.Selection_Carte_Zone a {
+    color: black;
+    font-family: serif;
+    
+
+}
+
+.Selection_Carte_Zone a p {
+    font-size: 90%;
+    background-color: rgb(194, 191, 191);
+    border-radius: 0% 0% 50% 50%;
+    text-align: center;
+    font-family: serif;
+    transition: 1s;
+}
+
+.border-hover-red:hover a p {
+    background-color: rgb(243, 154, 154);
+    
+    border-radius: 15px
+}
+

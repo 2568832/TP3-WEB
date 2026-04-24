@@ -1,0 +1,55 @@
+
+body {
+    background-attachment: fixed;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+header {
+    box-sizing: content-box;
+    background-color: #d8d7d7;
+    opacity: 70%;
+    padding-bottom: 1%;
+    border-radius: 0% 0% 5% 5%;
+}
+
+
+#NomSite {
+    font-size: 200%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-style: italic;
+    color: #201f1f;
+    text-shadow: 0rem 0rem #b9b7b7;
+    transition: 0.3s;
+    position: relative;
+}
+
+#NomSite:hover {
+
+    text-shadow: 0rem 0.5rem #b9b7b7;
+
+}
+
+
+.text-danger {
+
+    filter: brightness(2) saturate(2);
+
+}
+
+main>div {
+    color: aliceblue;
+    box-shadow: 1rem 1rem  #b9b7b7;
+    text-shadow: 0.08rem 0.08rem rgb(4, 17, 41);
+    filter: brightness(1.2);
+}
+
+#background {
+
+    background-color: #b9b7b7 ;
+    opacity: 70%;
+}
+
+
+

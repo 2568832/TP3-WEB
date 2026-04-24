@@ -1,0 +1,24 @@
+﻿@using TP2.Models
+@model List<Compagnie>
+@{
+    Layout = "_Layout";
+}
+
+<div class="row bg-opacity-75 opacity-5 BuleSélection" id="options">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4 align-content-center @(item.Nom) Box ">
+            <a href="~/Enfant/Recherche">
+                <img src="@item.imgURL"
+                     alt="@item.Nom" class="img-fluid">
+            </a>
+            <p class="Texte_Blanc">
+                @item.Description
+            </p>
+
+        </div>
+    }
+    
+    
+</div>
+
