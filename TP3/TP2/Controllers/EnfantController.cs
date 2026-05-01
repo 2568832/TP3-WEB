@@ -22,15 +22,28 @@ namespace TP2.Controllers
 
         public IActionResult Recherche(CritereRechercheViewModel criteres)
         {
+            IEnumerable<Carte_Graphique> objRechercher = _baseDeDonnees.Carte_Graphiques;
+
             var model = new PageRechercheViewModel();
             model.Criteres = criteres;
 
-            var objRechercher = _baseDeDonnees.Carte_Graphiques.AsQueryable(); // Convertisseur de IEnumerable a IQueryable 
+            model.Resultat = objRechercher.ToList();
+
+            return View(model);
+        }
+
+        [Route("/Enfant/Filtrer")]
+
+        public IActionResult Filtrer(CritereRechercheViewModel criteres)
+        {
+
+
+            IEnumerable<Carte_Graphique> objRechercher = _baseDeDonnees.Carte_Graphiques;
 
             // Motclé
             if (criteres.MotsCles != null && criteres.MotsCles != "")
             {
-               
+
                 objRechercher = objRechercher.Where(c =>
                     c.Nom.ToLower().Contains(criteres.MotsCles.ToLower()) ||
                     c.Description.ToLower().Contains(criteres.MotsCles.ToLower())
@@ -61,9 +74,12 @@ namespace TP2.Controllers
             if (compagnies.Count > 0)
                 objRechercher = objRechercher.Where(c => compagnies.Contains(c.CompagnieID));
 
+            var model = new PageRechercheViewModel();
+            model.Criteres = criteres;
+
             model.Resultat = objRechercher.ToList();
 
-            return View(model);
+            return View("Recherche",model);
         }
 
 
