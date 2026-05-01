@@ -29,6 +29,7 @@ namespace TP2.Controllers
 
             model.Resultat = objRechercher.ToList();
 
+            
             return View(model);
         }
 
@@ -78,8 +79,10 @@ namespace TP2.Controllers
             model.Criteres = criteres;
 
             model.Resultat = objRechercher.ToList();
-
-            return View("Recherche",model);
+            
+                
+            return View("Recherche", model);
+            
         }
 
 

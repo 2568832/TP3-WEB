@@ -23,9 +23,7 @@ main>div {
 .border {
     transition: 2s;
     border-radius: 10px;
-    
-    
-    
+    position: relative;
 }
 
 .border-hover-red:hover {
@@ -34,12 +32,10 @@ main>div {
     border-radius: 6%;
     
 }
-
+/*
 .Selection_Carte_Zone a {
     color: black;
     font-family: serif;
-    
-
 }
 
 .Selection_Carte_Zone a p {
@@ -49,11 +45,17 @@ main>div {
     text-align: center;
     font-family: serif;
     transition: 1s;
-}
+}*/
 
 .border-hover-red:hover a p {
     background-color: rgb(243, 154, 154);
     
     border-radius: 15px
+}
+
+.Buttom {
+    position:relative;
+    
+   
 }
 

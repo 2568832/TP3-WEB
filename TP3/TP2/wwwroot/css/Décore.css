@@ -74,6 +74,7 @@ i:active {
 #Text_noir
 {
     color: black;
+    
 }
 
 .PVedette {
@@ -83,7 +84,7 @@ i:active {
     padding: 1rem 1.5rem;
     color: white;
     display: inline;
-    .Text_noir {
+    
     color: black;
 }
 
