@@ -9,7 +9,7 @@ namespace TP2.Controllers
         private BaseDeDonnees _baseDeDonnees { get; set; }
 
         public EnfantController(BaseDeDonnees baseDeDonnees) 
-        { 
+        {
             _baseDeDonnees = baseDeDonnees;
         }
         [Route("/Enfant/favoris")]

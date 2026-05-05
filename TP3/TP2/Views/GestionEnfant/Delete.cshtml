@@ -1,0 +1,37 @@
+﻿@model TP2.Models.Carte_Graphique
+@using TP2.Models
+
+
+
+<h3> Vous êtes certain ???</h3>
+<p> Carte graphique</p>
+<div>
+    <h4>Carte_Graphique</h4>
+    <hr />
+    <dl class="row" style=" color: black">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nom)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nom)
+        </dd>
+        <dd class="col-sm-10 mt-3 d-inline">
+            <p class="fw-bold text-start">Image :</p>
+            
+            <a href="~/Enfant/Detail/@Model.ID" class="d-block">
+                <img src="@Model.imgURL" alt="@Model.Nom" class="img-fluid" />
+            </a>
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="submit" value="Supprimer" class="btn btn-danger" />
+        
+    </form>
+</div>

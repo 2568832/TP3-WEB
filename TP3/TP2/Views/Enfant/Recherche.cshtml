@@ -123,7 +123,7 @@ else
                 <a href="~/Enfant/Detail/@(item.ID)">
                     <p>@(item.Nom)</p>
 
-                    <form action="https://www.w3schools.com/action_page.php" method="POST" class="p-2">
+                    <form action="~/GestionEnfant/Delete/@(item.ID)" method="get" class="p-2">
                         <input type="hidden" name="nom" value="@(item.Nom)">
 
                         <button type="submit" class="btn btn-danger">
