@@ -7,7 +7,7 @@
 }
 
 <div class="row bg-opacity-75 opacity-5 BuleSélection" id="options">
-    @foreach (var item in Model)
+    @foreach (Compagnie item in Model)
     {
         <div class="col-md-4 align-content-center @(item.Nom) Box ">
             <a href="~/Enfant/Recherche">
@@ -22,7 +22,7 @@
             <p class="d-inline-block fw-bold" style="color: white;">
                 <br />
                 Nb Cartes:
-                
+                @item.Cartes_Graphiques.Count;
             </p>
             
 

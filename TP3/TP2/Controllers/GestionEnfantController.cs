@@ -42,7 +42,7 @@ namespace TP2.Controllers
 
                 var carte = _baseDeDonnees.Carte_Graphiques.Where(c => c.ID == id).Single();
                 _baseDeDonnees.Carte_Graphiques.Remove(carte);
-                _baseDeDonnees.Compagnies[carte.CompagnieID].Cartes_Graphiques.Remove(carte);
+                
 
 
                 return RedirectToAction("Index","Home");
