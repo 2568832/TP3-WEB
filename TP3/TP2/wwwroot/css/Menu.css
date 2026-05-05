@@ -11,14 +11,13 @@ body {
   transition: 1s;
 }
 
-.Nvidia:hover {
-  padding: 0% 5% 20% 5%;
-  transform: scaleX(1.5);
-  transition: 1s;
-  top: 100px;
-  z-index: 200;
-  transform-origin: top left
-}
+    .Nvidia:hover {
+        transform-origin:top left;
+        transform: scaleX(1.5);
+        transition: 1s;
+        top: 100px;
+        z-index: 200;
+    }
 
 .Nvidia:hover p {
 
