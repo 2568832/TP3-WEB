@@ -1,4 +1,5 @@
 using TP2.Models;
+using System;
 
 namespace TP2
 {
@@ -11,7 +12,7 @@ namespace TP2
             // Add services to the container.
             builder.Services.AddControllersWithViews();
             builder.Services.AddControllersWithViews(); // Permet MVC
-
+            builder.Services.AddSession(option => { option.IdleTimeout = TimeSpan.FromMinutes(30); });
             builder.Services.AddSingleton<BaseDeDonnees>();
 
             var app = builder.Build();
@@ -23,6 +24,7 @@ namespace TP2
             }
             app.UseStaticFiles();
 
+            app.UseSession();
             app.UseRouting();
 
             app.UseAuthorization();

@@ -9,5 +9,14 @@ namespace TP2.Controllers
             return View();
         }
 
+        public IActionResult AjouterUnEnfant(int id)
+        {
+            return View();
+        }
+
+        public IActionResult SupprimerUnEnfant(int id)
+        {
+            return View();
+        }
     }
 }
