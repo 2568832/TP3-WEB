@@ -1,9 +1,10 @@
 ﻿@using TP2.Models
 @using TP2.ViewModels
+
 @model List<TP2.Models.Carte_Graphique>
 
 @{
-    ViewData["style"] = "Favoris";
+    // ViewData["style"] = "Favoris";
 }
 
 <section class="container my-5">
@@ -11,7 +12,7 @@
 
     <!-- Nombre de favoris -->
     <p class="fs-5 mb-4">
-        Vous avez <strong>4</strong> éléments en favoris !
+        Vous avez <strong>@Model.Count</strong> éléments en favoris !
     </p>
 
     <!-- Tableau -->
@@ -45,13 +46,13 @@
                         <td>@(item.compagnie.Nom)</td>
 
                         <td>
-                            <form action="https://www.w3schools.com/action_page.php" method="POST">
-                                <input type="hidden" name="nom" value="@(item.Nom)">
-
+                            <a asp-controller="Favoris" asp-action="SupprimerUnEnfant" asp-route-id="@item.ID">
                                 <button type="submit" class="btn btn-danger">
                                     <i class="fa-solid fa-trash"></i>
                                 </button>
-                            </form>
+                            </a>
+
+                            
                         </td>
                     </tr>
                 }

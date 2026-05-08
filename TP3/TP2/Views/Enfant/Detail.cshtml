@@ -54,14 +54,17 @@
 
      <!--                  Je doit ajouté une condition                                l'action doit être modeifier car il vas ajouter a favoris-->
 
-    <form action="~/Favoris/Index" method="POST" class="mt-4"> 
-        <input type="hidden" name="name" value="@(Model.Nom)">
+
+    <form class="mt-4" method="post" asp-controller="Favoris" asp-action="AjouterUnEnfant" asp-route-id="@Model.ID">
+        <input type="hidden" asp-for="@Model.ID">
 
         <button type="submit" class="btn btn-success btn-lg">
             <i class="fa-solid fa-star"></i> Ajouter aux favoris
         </button>
-    </form>
 
+
+    </form>
+    
     <details>
         <!-- Permet d'afficher un texte déroulant -->
         <summary class=" pt-5">
