@@ -12,14 +12,8 @@ namespace TP2.Controllers
         {
             _baseDeDonnees = baseDeDonnees;
         }
-        [Route("/Enfant/favoris")]
-        public IActionResult favoris()
-        {
-            return View(_baseDeDonnees.Carte_Graphiques.ToList());
-        }
 
         [Route("/Enfant/Recherche")]
-
         public IActionResult Recherche(CritereRechercheViewModel criteres)
         {
             IEnumerable<Carte_Graphique> objRechercher = _baseDeDonnees.Carte_Graphiques;
@@ -34,7 +28,6 @@ namespace TP2.Controllers
         }
 
         [Route("/Enfant/Filtrer")]
-
         public IActionResult Filtrer(CritereRechercheViewModel criteres)
         {
 
