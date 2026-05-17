@@ -4,7 +4,7 @@
 @model List<TP2.Models.Carte_Graphique>
 
 @{
-    // ViewData["style"] = "Favoris";
+    ViewData["style"] = "Favoris";
 }
 
 <section class="container my-5">
@@ -46,11 +46,12 @@
                         <td>@(item.compagnie.Nom)</td>
 
                         <td>
-                            <a asp-controller="Favoris" asp-action="SupprimerUnEnfant" asp-route-id="@item.ID">
+                            <form asp-controller="Favoris" asp-action="SupprimerUnEnfant" method="post">
+                                <input type="hidden" name="id" value="@item.ID" />
                                 <button type="submit" class="btn btn-danger">
                                     <i class="fa-solid fa-trash"></i>
                                 </button>
-                            </a>
+                            </form>
 
                             
                         </td>

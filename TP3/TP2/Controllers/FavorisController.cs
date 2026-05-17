@@ -1,10 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.Blazor;
+﻿using Microsoft.AspNetCore.Mvc;
 using TP2.Extensions;
 using TP2.Models;
-
-
 
 namespace TP2.Controllers
 {
@@ -12,7 +8,7 @@ namespace TP2.Controllers
     {
         private BaseDeDonnees _baseDeDonnees { get; set; }
 
-        public FavorisController (BaseDeDonnees baseDeDonnees)
+        public FavorisController(BaseDeDonnees baseDeDonnees)
         {
             _baseDeDonnees = baseDeDonnees;
         }
@@ -22,77 +18,38 @@ namespace TP2.Controllers
         {
             var enfantIDs = HttpContext.Session.Get<List<int>>("enfantIDs");
             if (enfantIDs == null)
-            {
-                enfantIDs= new List<int>();
-            }
+                enfantIDs = new List<int>();
 
-            var enfantsDeLaBD = _baseDeDonnees.Carte_Graphiques.Where(e => enfantIDs.Contains(e.ID)).ToList();
+            var enfantsDeLaBD = _baseDeDonnees.Carte_Graphiques
+                .Where(e => enfantIDs.Contains(e.ID))
+                .ToList();
 
             return View(enfantsDeLaBD);
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public IActionResult AjouterUnEnfant(int id)
         {
-              
+            var ids = HttpContext.Session.Get<List<int>>("enfantIDs") ?? new List<int>();
 
-                List<int> ID = HttpContext.Session.Get<List<int>>("enfantIDs");
+            if (!ids.Contains(id))
+                ids.Add(id);
 
-                if (ID == null)
-                {
-                    ID = new List<int>();
-                }
+            HttpContext.Session.Set("enfantIDs", ids);
 
-                bool test = _baseDeDonnees.Carte_Graphiques.Any(c => c.ID == id);
-                if (!test)
-                {
-                    ID.Add(id);
-
-                    HttpContext.Session.Set("enfantIDs", ID);
-
-
-                    RedirectToAction("Index", "Favoris", _baseDeDonnees.Carte_Graphiques);
-                return View("Index");
-
-                 }
-                 else
-                {
-                    
-                    return View("Index");
-
-                }
-            
-
+            return RedirectToAction("Index");
         }
 
-        
-
-        //public ActionResult Create(Crewmate collection)
-        //{
-        //    if (!ModelState.IsValid)
-        //        return View(collection);
-
-        //    // Vérifie si la couleur existe déjà
-        //    bool colorUsed = _db.Crewmates.Any(p => p.Color == collection.Color);
-
-        //    if (colorUsed)
-        //    {
-        //        // Ajoute un message d’erreur pour l’utilisateur
-        //        ModelState.AddModelError("Color", "Cette couleur est déjà utilisée.");
-        //        return View(collection);
-        //    }
-
-        //    // Si la couleur n'est pas utilisée, on ajoute
-        //    _db.Crewmates.Add(collection);
-
-        //    return RedirectToAction(nameof(Index));
-        //}
-
+        [HttpPost]
         public IActionResult SupprimerUnEnfant(int id)
         {
-            return View();
-        }
+            var ids = HttpContext.Session.Get<List<int>>("enfantIDs") ?? new List<int>();
 
+            ids.Remove(id);
+
+            HttpContext.Session.Set("enfantIDs", ids);
+
+            return RedirectToAction("Index");
+        }
     }
 }
