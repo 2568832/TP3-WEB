@@ -1,0 +1,27 @@
+﻿@using TP2.Models
+@using TP2.ViewModels
+@model List<TP2.Models.Carte_Graphique>
+
+
+@foreach (var item in Model)
+{
+
+    <div class="border border-hover-red col-lg-3 col-11 m-2 text-end ">
+        <a href="~/Enfant/Detail/@(item.ID)">
+            <p>@(item.Nom)</p>
+
+            <form action="~/GestionEnfant/Delete/@(item.ID)" method="get" class="p-2">
+                <input type="hidden" name="nom" value="@(item.Nom)">
+
+                <button type="submit" class="btn btn-danger">
+                    <i class="fa-solid fa-trash"></i>
+                </button>
+            </form>
+
+            <img class="img-fluid" src="@(item.imgURL)" alt="@(item.Model)">
+        </a>
+
+
+    </div>
+
+}

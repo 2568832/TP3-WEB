@@ -20,9 +20,8 @@ namespace TP2.Controllers
             if (enfantIDs == null)
                 enfantIDs = new List<int>();
 
-            var enfantsDeLaBD = _baseDeDonnees.Carte_Graphiques
-                .Where(e => enfantIDs.Contains(e.ID))
-                .ToList();
+
+            var enfantsDeLaBD = _baseDeDonnees.Carte_Graphiques.Where(e => enfantIDs.Contains(e.ID)).ToList();
 
             return View(enfantsDeLaBD);
         }
@@ -30,15 +29,22 @@ namespace TP2.Controllers
         [HttpPost]
         public IActionResult AjouterUnEnfant(int id)
         {
+
+
+
             var ids = HttpContext.Session.Get<List<int>>("enfantIDs") ?? new List<int>();
+
 
             if (!ids.Contains(id))
                 ids.Add(id);
 
             HttpContext.Session.Set("enfantIDs", ids);
 
+
             return RedirectToAction("Index");
         }
+
+
 
         [HttpPost]
         public IActionResult SupprimerUnEnfant(int id)
@@ -47,7 +53,9 @@ namespace TP2.Controllers
 
             ids.Remove(id);
 
+
             HttpContext.Session.Set("enfantIDs", ids);
+
 
             return RedirectToAction("Index");
         }
